@@ -1,0 +1,11 @@
+{
+  "parser": "babel",
+  "extends": ["airbnb", "airbnb/hooks", "prettier/react", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js"]
+      }
+    }
+  }
+}
