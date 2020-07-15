@@ -2,28 +2,47 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Tułowiecka`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@mtulowiecki`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`],
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Open Sans`,
+    //         variants: [`400`, `700`],
+    //       },
+    //       {
+    //         family: `Maven Pro`,
+    //         variants: [`400`, `700`],
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `svgs`,
+        path: `${__dirname}/src/assets/svgs`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svgs/,
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -52,8 +71,10 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         assets: path.join(__dirname, 'src/assets'),
+        utils: path.join(__dirname, 'src/utils'),
         components: path.join(__dirname, 'src/components'),
         templates: path.join(__dirname, 'src/templates'),
+        hoc: path.join(__dirname, 'src/hoc'),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
