@@ -6,7 +6,6 @@ import { colors, media, shadows, typography } from 'utils';
 import { useViewportScroll } from 'framer-motion';
 
 import Logo from 'components/Logo/Logo';
-import DotsNavigation from 'components/DotsNavigation/DotsNavigation';
 import HomeSection from 'sections/HomeSection';
 import ServicesSection from 'sections/ServicesSection';
 import AboutSection from 'sections/AboutSection';
