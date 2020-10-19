@@ -6,6 +6,7 @@ import { media } from 'utils';
 
 const StyledElement = styled(Element)`
   position: relative;
+  min-height: 100vh;
   width: 100%;
   padding: 2rem 1rem;
   display: grid;
@@ -13,7 +14,6 @@ const StyledElement = styled(Element)`
   scroll-snap-align: start;
 
   ${media.laptop`
-    height: 100vh;
     padding: 2rem;
   `}
 `;

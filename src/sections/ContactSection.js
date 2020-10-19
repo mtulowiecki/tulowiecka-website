@@ -8,7 +8,6 @@ import Heading from 'components/Heading/Heading';
 import Paragraph from 'components/Paragraph/Paragraph';
 import Input from 'components/Input/Input';
 
-import ContactSvg from 'assets/svgs/contactSvg.svg';
 import avatarIcon from 'assets/icons/avatar.svg';
 import emailIcon from 'assets/icons/email.svg';
 import phoneIcon from 'assets/icons/phone.svg';
@@ -30,24 +29,6 @@ const ContactWrapper = styled.div`
     width: 75%;
     border: solid ${({ theme }) => theme.dark} 1rem;
     grid-template: 1fr / repeat(2,1fr);
-  `}
-`;
-
-const StyledContactSvg = styled(ContactSvg)`
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  height: 80%;
-  width: 100%;
-  overflow: visible;
-
-  ${media.laptop`
-  top: 50%;
-  left: 50%;
-  height: 80%;
-  width: 160%;
-  transform: translate(-50%,-50%);
   `}
 `;
 
@@ -97,7 +78,6 @@ const Button = styled.button`
 
 const ContactSection = ({ content: { name, email, phone, adress } }) => (
   <SectionTemplate name="contact">
-    <StyledContactSvg />
     <ContactWrapper>
       <InfoWrapper>
         <StyledHeading>Dane kontaktowe</StyledHeading>

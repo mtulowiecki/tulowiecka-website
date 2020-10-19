@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 import Logo from 'components/Logo/Logo';
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 const Paragraph = styled.p`

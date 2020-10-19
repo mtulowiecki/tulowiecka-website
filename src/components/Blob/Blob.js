@@ -29,8 +29,8 @@ const Blob = ({ className }) => {
           ],
         }}
         transition={{
-          loop: Infinity,
-          duration: 10,
+          yoyo: Infinity,
+          duration: 5,
         }}
         fill="#DFF2FA"
       />

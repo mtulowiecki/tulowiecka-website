@@ -18,6 +18,7 @@ const Circle = styled(motion.div)`
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
+  opacity: 0.7;
 
   ${({ red }) =>
     red &&

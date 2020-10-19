@@ -3,7 +3,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import 'normalize.css';
 import { colors, media, shadows, typography } from 'utils';
-import { useElementScroll } from 'framer-motion';
+import { useViewportScroll } from 'framer-motion';
 
 import Logo from 'components/Logo/Logo';
 import DotsNavigation from 'components/DotsNavigation/DotsNavigation';
@@ -68,6 +68,13 @@ body {
 }
 `;
 
+const RootWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+`;
+
 const Navbar = styled.nav`
   position: absolute;
   top: 0;
@@ -81,18 +88,8 @@ const Navbar = styled.nav`
   `}
 `;
 
-const RootWrapper = styled.div`
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  scroll-snap-type: y proximity;
-  overflow-y: scroll;
-  overflow-x: hidden;
-`;
-
 const IndexPage = () => {
-  const rootEl = useRef();
-  const { scrollYProgress } = useElementScroll(rootEl);
+  const { scrollYProgress } = useViewportScroll();
 
   return (
     <>
@@ -104,11 +101,11 @@ const IndexPage = () => {
       </Helmet>
       <ThemeProvider theme={{ ...colors, ...typography, ...shadows }}>
         <GlobalStyle />
-        <RootWrapper id="root" ref={rootEl}>
+        <RootWrapper id="root">
           <Navbar>
             <Logo />
           </Navbar>
-          <DotsNavigation scrollYProgress={scrollYProgress} />
+          {/* <DotsNavigation scrollYProgress={scrollYProgress} />  */}
           <HomeSection content={pageContent.hero} />
           <ServicesSection content={pageContent.services} />
           <AboutSection content={pageContent.about} />

@@ -49,28 +49,28 @@ const StyledCardsBlob = styled(CardsBlob)`
   `};
 `;
 
-// const Decor = styled(motion.div)`
-//   display: none;
-//   position: absolute;
-//   top: 5%;
-//   right: 30%;
-//   height: 70px;
-//   width: 70px;
-//   border-radius: 16px;
-//   background-color: ${({ theme }) => theme.light};
-//   opacity: 0.5;
+const Decor = styled(motion.div)`
+  display: none;
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  height: 70px;
+  width: 70px;
+  border-radius: 16px;
+  background-color: ${({ theme }) => theme.light};
+  opacity: 0.6;
 
-//   ${media.laptop`
-//     display: block;
-//   `}
+  ${media.laptop`
+    display: block;
+  `}
 
-//   ${({ second }) =>
-//     second &&
-//     css`
-//       top: 100%;
-//       right: 35%;
-//     `}
-// `;
+  ${({ second }) =>
+    second &&
+    css`
+      top: 90%;
+      right: 30%;
+    `}
+`;
 
 const StyledColumn = styled.div`
   width: 45%;
@@ -129,21 +129,21 @@ const ServicesSection = ({ content: { cards, detailed } }) => {
       <ServicesWrapper>
         <CardsWrapper>
           <StyledCardsBlob />
-          {/* <Decor
+          <Decor
             animate={{ rotate: 360 }}
             transition={{
               loop: Infinity,
-              duration: 10,
+              duration: 5,
             }}
           />
           <Decor
             animate={{ rotate: 360 }}
             transition={{
               loop: Infinity,
-              duration: 20,
+              duration: 8,
             }}
             second
-          /> */}
+          />
           <StyledColumn empty>
             <Card />
             <Card />

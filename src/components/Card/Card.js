@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { motion } from 'framer-motion';
 import { media } from 'utils';
 
 import Heading from 'components/Heading/Heading';
 import Paragraph from 'components/Paragraph/Paragraph';
 
-const CardWrapper = styled(motion.div)`
+const CardWrapper = styled.div`
   position: relative;
   margin: 1rem auto;
   background-color: ${({ theme }) => theme.light};
@@ -59,11 +58,7 @@ const CardText = styled(Paragraph)`
 
 const Card = ({ value, darkBackground }) => {
   return (
-    <CardWrapper
-      whileHover={{ scale: 1.05 }}
-      darkBackground={darkBackground}
-      empty={!value}
-    >
+    <CardWrapper darkBackground={darkBackground} empty={!value}>
       {value && (
         <>
           <Label>{value[0]}</Label>
