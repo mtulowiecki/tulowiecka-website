@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "airbnb/hooks"],
+  "rules": {
+    "strict": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
+    "arrow-parens": ["error", "as-needed"],
+    "implicit-arrow-linebreak": 0,
+    "object-curly-newline": 0,
+    "comma-dangle": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["."],
+        "extensions": [".js"]
+      }
+    }
+  }
+}
